@@ -28,3 +28,9 @@ The Serial-to-Parallel Converter is responsible for converting the serialized Ha
  # Decoder
 
  # Decoder Functionality
+
+ # How to Use
+Clone the repository to your local machine. (https://github.com/aaronghosh/Hamming-Code-in-System-Verilog-for-Error-Detection-and-Correction/tree/main)
+Open your preferred SystemVerilog development environment.
+Simulate the modules using appropriate testbenches to verify their functionality.
+Modify and integrate the modules as needed for your specific project requirements.
