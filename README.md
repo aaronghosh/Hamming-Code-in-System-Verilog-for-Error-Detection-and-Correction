@@ -7,29 +7,39 @@ Hamming Code is an error-correcting code widely used in digital communication sy
 
 # Overview
 This project aims to illustrate the practical implementation of Hamming Code encoding using the SystemVerilog hardware description language. The Encoder and Decoder modules, which are the core components, work in conjunction with the Serial-to-Parallel and Parallel-to-Serial Converter and Counter modules to accomplish the following:
+# Hamming Code Encoder
 
-# Encoder
-The Encoder has 3 parts, they are as follows:
-       
-       
-       --Encoder Functionality
+This repository contains the encoder part of a Hamming Code project implemented using SystemVerilog. The encoder is responsible for adding redundant parity bits to the input data to enable error detection and correction using Hamming Code.
 
-       
-       --Serial to Parallel converter
+## Modules
 
-       
-       --Up Counter
-# Encoder Functionality
+### Up-Counter Encoder
 
-The Encoder takes a stream of input data and transforms it into a Hamming Code with added parity bits. These parity bits enable the detection and correction of errors that may occur during data transmission. It systematically calculates and appends parity bits to the original data, generating a robust encoded output. The module's design enables it to detect and correct errors, enhancing data reliability during transmission.
+The `upcounterencoder` module is responsible for generating an up-counter that increments every clock cycle. This counter is used to keep track of the number of bits in the input data, which is crucial for determining the positions of the parity bits.
 
-# Serial-to-Parallel Converter 
+### Serial-to-Parallel Converter
 
-The Serial-to-Parallel Converter is responsible for converting the serialized Hamming Code into parallel data format. It utilizes memory elements and clock signals to ensure accurate conversion. By converting the data into a parallel format, it paves the way for efficient error correction and detection mechanisms to be applied.
+The `serialtoparallel` module implements a serial-to-parallel converter. It takes serial data and, based on a clock signal and control signals, converts it into parallel data. The converter also has a reset mechanism to ensure proper synchronization during operation.
 
-# Counter
+### Encoder Function
 
- The Counter module monitors the number of transmitted data bits. When a predefined count is reached, it triggers the operation of the Encoder. This controlled activation ensures that encoding occurs only after a specific number of data bits have been received. By counting the transmitted bits and activating the Encoder at the appropriate time, it ensures that the encoding process occurs systematically and only when necessary.
+The `encoderhamming` module is the core of the encoder. It implements the Hamming Code encoding logic, which adds redundant parity bits to the input data. These parity bits are calculated based on the positions determined by the up-counter.
+
+## Usage
+
+To use the Hamming Code Encoder, follow these steps:
+
+1. Instantiate the `encodermain` module, which orchestrates the encoder's functionality by calling the sub-modules.
+
+2. Provide the necessary inputs to the `encodermain` module, including the data to be encoded (`data_inp`), clock signal (`clk`), write enable signal (`write`), and reset signal (`reset`).
+
+3. The `upcounterencoder` generates an up-counter that keeps track of the number of bits in the input data.
+
+4. The `serialtoparallel` module converts the data from serial to parallel based on control signals and clock.
+
+5. The `encoderhamming` module adds redundant parity bits to the data based on Hamming Code logic.
+
+6. Retrieve the encoded data (`data_outp`) from the `encodermain` module's output.
 
 # Hamming Code Decoder
 
