@@ -11,7 +11,11 @@ This project aims to illustrate the practical implementation of Hamming Code enc
 # Encoder
 The Encoder has 3 parts, they are as follows:
        --Encoder Functionality
+
+       
        --Serial to Parallel converter
+
+       
        --Up Counter
 # Encoder Functionality
 
