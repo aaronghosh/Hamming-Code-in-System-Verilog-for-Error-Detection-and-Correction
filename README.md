@@ -31,18 +31,41 @@ The Serial-to-Parallel Converter is responsible for converting the serialized Ha
 
  The Counter module monitors the number of transmitted data bits. When a predefined count is reached, it triggers the operation of the Encoder. This controlled activation ensures that encoding occurs only after a specific number of data bits have been received. By counting the transmitted bits and activating the Encoder at the appropriate time, it ensures that the encoding process occurs systematically and only when necessary.
 
- # Decoder
+# Hamming Code Decoder
 
- # Decoder Functionality
+This repository contains the decoder part of a Hamming Code project implemented using SystemVerilog. The decoder is responsible for receiving encoded data, performing error detection and correction using Hamming Code, and converting the data back to its original form.
 
- # How to Use
-Clone the repository to your local machine. (https://github.com/aaronghosh/Hamming-Code-in-System-Verilog-for-Error-Detection-and-Correction/tree/main)
+## Modules
+
+### Counter Decoder
+
+The `counter_decoder` module is responsible for generating a counter that increments every clock cycle, except when a reset signal is active. This counter is used to keep track of the position during parallel-to-serial conversion.
+
+### Parallel-to-Serial Converter
+
+The `serialtoparallel` module implements a parallel-to-serial converter. It takes parallel data and, based on a clock signal and control signals, converts it into serial data. The converter also has a reset mechanism to ensure proper synchronization during operation.
+
+### Decoder Function
+
+The `hamming_decoder` module is the core of the decoder. It implements the Hamming Code decoding logic, which detects and corrects errors in the received data. The function checks for parity bits and uses XOR operations to identify and correct erroneous bits.
+
+## Usage
+
+To use the Hamming Code Decoder, follow these steps:
+
+1. Instantiate the `decodermain` module, which orchestrates the decoder's functionality by calling the sub-modules.
+
+2. Provide the necessary inputs to the `decodermain` module, including the encoded data (`in`), clock signal (`clk`), enable signal (`enable`), parallel-to-serial converter control signals (`pts_reset`, `write`, `shift`), and reset signal (`reset`).
+
+3. The `counter_decoder` generates a counter that keeps track of the position during parallel-to-serial conversion.
+
+4. The `serialtoparallel` module converts the data from parallel to serial based on control signals and clock.
+
+5. The `hamming_decoder` module detects and corrects errors in the data based on Hamming Code logic and the enable signal.
+
+6. Retrieve the corrected data (`out`) from the `decodermain` module's output.
 
 
-Open your preferred SystemVerilog development environment.
+ 
 
-
-Simulate the modules using appropriate testbenches to verify their functionality.
-
-
-Modify and integrate the modules as needed for your specific project requirements.
+ 
