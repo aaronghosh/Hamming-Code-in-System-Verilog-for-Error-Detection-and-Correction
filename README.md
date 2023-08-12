@@ -9,12 +9,16 @@ Hamming Code is an error-correcting code widely used in digital communication sy
 This project aims to illustrate the practical implementation of Hamming Code encoding using the SystemVerilog hardware description language. The Encoder and Decoder modules, which are the core components, work in conjunction with the Serial-to-Parallel and Parallel-to-Serial Converter and Counter modules to accomplish the following:
 
 # Encoder
-
+The Encoder has 3 parts, they are as follows:
+       --Encoder Functionality
+       --Serial to Parallel converter
+       --Up Counter
 # Encoder Functionality
 
 The Encoder takes a stream of input data and transforms it into a Hamming Code with added parity bits. These parity bits enable the detection and correction of errors that may occur during data transmission. It systematically calculates and appends parity bits to the original data, generating a robust encoded output. The module's design enables it to detect and correct errors, enhancing data reliability during transmission.
 
 # Serial-to-Parallel Converter 
+
 The Serial-to-Parallel Converter is responsible for converting the serialized Hamming Code into parallel data format. It utilizes memory elements and clock signals to ensure accurate conversion. By converting the data into a parallel format, it paves the way for efficient error correction and detection mechanisms to be applied.
 
 # Counter
