@@ -16,7 +16,7 @@ input logic clk,
         if (pts_reset)
             data_reg <= 4'b0000;
         else if (write)
-            data_reg <= data_in;
+            data_reg <= data_in ;
     end
 
     always_ff @(posedge clk)
