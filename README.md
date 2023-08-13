@@ -1,12 +1,11 @@
 # Hamming-Code-in-System-Verilog-for-Error-Detection-and-Correction
+This project aims to illustrate the practical implementation of Hamming Code encoding using the SystemVerilog hardware description language. The Encoder and Decoder modules, which are the core components, work in conjunction with the Serial-to-Parallel and Parallel-to-Serial Converter and Counter modules.
 
 # Hamming-Code
 Hamming Code is an error-correcting code widely used in digital communication systems to enhance data integrity during transmission. It achieves error detection and correction by adding redundant bits to the original data. These redundant bits, known as parity bits, are strategically placed to detect and, in some cases, correct errors that may occur during data transmission. Hamming Code is particularly effective at detecting single-bit errors and can also detect certain multi-bit errors. This project showcases the implementation of Hamming Code to demonstrate its practical application in data communication. 
 
 ![image](https://github.com/aaronghosh/Hamming-Code-in-System-Verilog-for-Error-Detection-and-Correction/assets/124378527/d745d730-0a85-4dcb-813a-7b604a1b47e3)
 
-# Overview
-This project aims to illustrate the practical implementation of Hamming Code encoding using the SystemVerilog hardware description language. The Encoder and Decoder modules, which are the core components, work in conjunction with the Serial-to-Parallel and Parallel-to-Serial Converter and Counter modules to accomplish the following:
 # Hamming Code Encoder
 
 This repository contains the encoder part of a Hamming Code project implemented using SystemVerilog. The encoder is responsible for adding redundant parity bits to the input data to enable error detection and correction using Hamming Code.
